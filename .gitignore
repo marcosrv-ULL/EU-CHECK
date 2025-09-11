@@ -1,7 +1,8 @@
 node_modules/
-apps/api/node_modules
-apps/web/node_modules
+*/node_modules
+*/node_modules
 API_KEY*
 apps/stt-python
 *.onnx
 apps/api/voices/*
+*/dist/*
