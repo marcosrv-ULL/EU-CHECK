@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
     "start": "node dist/index.js",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
     "@fastify/cors": "^8.4.0",
     "@fastify/websocket": "^8.3.0",
+    "@types/ws": "^8.18.1",
     "dotenv": "^16.4.0",
     "fastify": "^4.29.1",
+    "fastify-cli": "^7.4.0",
     "formdata-node": "^6.0.3",
     "mnemonist": "^0.39.6",
     "obliterator": "^2.0.4",
@@ -24,7 +26,12 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "tsc-alias": "^1.8.16",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^4.7.0",
     "typescript": "^5.4.0"
+  },
+  "_moduleAliases": {
+    "@": "dist"
   }
 }

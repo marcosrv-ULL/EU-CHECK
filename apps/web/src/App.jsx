@@ -30,7 +30,7 @@ export default function App() {
         childrenRight={
           <div className="grid h-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(220px,1fr)] gap-4 place-items-center">
             <div className="col-span-full row-span-full w-full h-full">
-              <AvatarPanel name="Modelo A" avatarUrl={"/avatars/av3.png"} />
+              <AvatarPanel name="Modelo A" avatarUrl="/avatars/av3.png" />
             </div>
           </div>
         }

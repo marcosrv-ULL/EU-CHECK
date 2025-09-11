@@ -3,13 +3,12 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import websocket from "@fastify/websocket";
 import { randomUUID } from "crypto";
-import { streamChatCompletion } from "./services/openai";
-import { SentenceChunker } from "./chunker";
+import { streamChatCompletion } from "@/services/openai";
+import { SentenceChunker } from "@/chunker";
 import { spawn } from "node:child_process";
 import path from "node:path";
-import { indexDir, topK, DocChunk } from "./services/knowledge";
-import { createEmbedding, openai } from "./services/openai";
-import fs from "node:fs";
+import { indexDir, topK, DocChunk } from "@/services/knowledge";
+import { createEmbedding, openai } from "@/services/openai";
 import fsp from "node:fs/promises";
 import os from "node:os";
 
