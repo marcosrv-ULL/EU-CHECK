@@ -6,6 +6,7 @@ import type { DocChunk } from "@/services/knowledge";
 import { topK } from "@/services/knowledge";
 
 import { synthesizeWithPiper } from "@/server/tts/piper";
+import { synthesizeWithFishSpeech } from "@/server/tts/fishSpeech";
 import { levelsFromWav, toWavPcm16 } from "@/server/audio/wav";
 import { transcribeOnce } from "@/server/stt/voskClient";
 import { sttSessions } from "@/server/stt/sessions";
@@ -197,7 +198,8 @@ export function registerChatWsRoute(app: FastifyInstance, deps: Deps) {
                 if (wantTTS) {
                   (async () => {
                     try {
-                      const wav = await synthesizeWithPiper(s, voiceBase);
+                      // const wav = await synthesizeWithPiper(s, voiceBase);
+                      const wav = await synthesizeWithFishSpeech("(excited) " + s);
                       const { levels, winMs } = levelsFromWav(wav, 40);
 
                       conn.socket.send(JSON.stringify({
